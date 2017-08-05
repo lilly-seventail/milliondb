@@ -1,0 +1,37 @@
+﻿{% extends 'mysite/base.html' %}
+
+{% block style %}
+<style>
+.img-over{
+  transition: 0.3s;
+}
+
+.img-over:hover{
+  transform: scale(2.2);
+}
+</style>
+
+{% endblock style %}
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <label>名前:</label>
+  {{ form.name }}
+  <button type="submit">検索</button>
+</form>
+
+<div class="col-md-12">
+{% if idols|length > 0 %}
+    {% for idol in idols %}
+    <div class="col-md-1">
+      <a href="{% url 'mysite:detail' pk=idol.pk %}"><img src="{{ idol.image.url }}" class="img-responsive img-circle img-over"/></a>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>検索結果は0件です。</p>
+{% endif %}
+</div>
+
+{% endblock content %}

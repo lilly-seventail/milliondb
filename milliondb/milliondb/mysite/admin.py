@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Idol
 
-# Register your models here.
+class IdolAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Idol)

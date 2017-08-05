@@ -1,0 +1,34 @@
+﻿{% extends 'mysite/base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="image col-md-4">
+      <img src="{{ idol.image.url }}" class="img-responsive"/>
+    </div>
+    <div class="detail col-md-8">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td><strong>名前</strong></td>
+            <td>{{ idol.name }}({{ idol.yomigana }})</td>
+          </tr>
+          <tr>
+            <td><strong>誕生日</strong></td>
+            <td>{{ idol.birthday }}</td>
+          </tr>
+          <tr>
+            <td><strong>身長</strong></td>
+            <td>{{ idol.height }}cm</td>
+          </tr>
+          <tr>
+            <td><strong>声優</strong></td>
+            <td>{{ idol.cv }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="h2">詳細</p>
+      {{ idol.detail }}
+    </div>
+  </div>
+
+{% endblock content %}
