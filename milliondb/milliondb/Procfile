@@ -1,0 +1,1 @@
+web: gunicorn milliondb.wsgi --log-file -
